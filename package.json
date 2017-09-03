@@ -47,8 +47,7 @@
     "build": "poi build src/index.js"
   },
   "precommit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "ava": {
     "require": [

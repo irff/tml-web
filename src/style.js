@@ -7,6 +7,10 @@ injectGlobal`
     font-size: 16px;
     background: ${theme.white};
     color: ${theme.black};
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
   }
 `;
 /* eslint-enable */
