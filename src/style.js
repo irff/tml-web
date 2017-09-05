@@ -1,10 +1,33 @@
 import { injectGlobal } from 'styled-components';
+import WebFont from 'webfontloader';
 import theme from './common/theme';
+
+WebFont.load({
+  custom: {
+    families: ['Cerebri'],
+  },
+});
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
+  @font-face {
+    font-family: Cerebri;
+    src: url('/fonts/CerebriSans-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: Cerebri;
+    src: url('/fonts/CerebriSans-ExtraBold.woff') format('woff');
+    font-weight: bold;
+  }
+
+  html {
+    font-size: 10px;
+  }
+
   body {
-    font-size: 16px;
+    font-family: Cerebri;
+    font-size: 1.6rem;
     background: ${theme.white};
     color: ${theme.black};
     margin: 0;

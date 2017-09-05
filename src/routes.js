@@ -1,22 +1,44 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import NotFound from './components/NotFound';
 import Home from '@/pages/Home';
+import NotFound from '@/components/NotFound';
 
-const routes = [
+import IconAvatar from '@/assets/avatar.svg';
+import IconCopy from '@/assets/copy.svg';
+import IconMagnifyingGlass from '@/assets/magnifying-glass.svg';
+import IconReload from '@/assets/reload.svg';
+
+const routes = [];
+
+export const navigationRoutes = [
   {
-    exact: true,
     path: '/',
     component: Home,
+    text: 'Jelajah',
+    exact: true,
+    icon: IconMagnifyingGlass,
   },
   {
-    path: '*',
-    component: NotFound,
+    path: '/koleksi',
+    text: 'Koleksi',
+    icon: IconCopy,
+  },
+  {
+    path: '/peminjaman',
+    text: 'Pinjaman',
+    icon: IconReload,
+  },
+  {
+    path: '/profil',
+    text: 'Profil',
+    icon: IconAvatar,
   },
 ];
 
 export default (
   <Switch>
-    {routes.map(route => <Route key={route.path} {...route} />)}
+    {navigationRoutes.map(route => <Route {...route} />)}
+    {routes.map(route => <Route {...route} />)}
+    <Route path="*" component={NotFound} />
   </Switch>
 );
