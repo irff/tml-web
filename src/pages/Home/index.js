@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import CategoryCard from '@/components/CategoryCard';
+import SearchBar from '@/components/SearchBar';
 import BookCard from '@/components/BookCard';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -9,6 +10,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <SearchBar />
+
         <Container>
           <WelcomeText>Hai, Irfan!</WelcomeText>
           Jelajahi kategori buku yang kamu inginkan
